@@ -1,0 +1,35 @@
+
+<ion-view view-title="Sign-In" name="login-view" >
+<div class="bar bar-header">
+  <h1 class="title">Sign-In</h1>
+</div>
+  <ion-content class="padding">
+    <form name="form" class="form-validation frm">
+    <!-- <div class="text-danger text-center message" ng-show="authError">
+              {{authError}}
+          </div> -->
+          
+   <div class="demo">
+        <div class="list list-inset listlogin">
+        <label class="item item-input">
+          <input type="text" name="email"  id="user_login" class="input" ng-model="user.email" 
+          placeholder="Email" required>
+       </label>
+       <label class="item item-input">
+         <input type="password" placeholder="Password" ng-model="user.password" name="pwd" id="user_login" class="input" required>
+         </label>
+    </div>
+    <button class="button button-block button-calm button-outline" ng-click="login()" ng-disabled='form.$invalid'>Login</button>
+    <label>
+        <input type="checkbox" ng-model="user.rememberMe"
+            ng-true-value="'YES'" ng-false-value="'NO'">
+            Remember Me
+            </label>
+  <!--   <li ng-if="!online"><a href="#">OFFLINE</a></li>
+      <li ng-if="online"><a href="#">ONLINE</a></li> -->
+    </form>
+    </div>
+  </ion-content>
+</ion-view>
+
+

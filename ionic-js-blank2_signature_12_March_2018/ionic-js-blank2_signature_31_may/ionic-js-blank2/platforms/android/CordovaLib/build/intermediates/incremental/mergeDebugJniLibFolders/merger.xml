@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Volumes/iOS/Ionic/ritesh/ionic-js-blank2_signature_31_may/ionic-js-blank2/platforms/android/CordovaLib/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/Volumes/iOS/Ionic/ritesh/ionic-js-blank2_signature_31_may/ionic-js-blank2/platforms/android/CordovaLib/src/debug/jniLibs"/></dataSet></merger>

@@ -1,0 +1,16 @@
+<ion-view view-title="File: {{ fileName }}">
+<ion-nav-bar class="bar-stable my-nav-bar-area nav-title-slide-ios7">
+    <!-- <ion-nav-back-button>
+    </ion-nav-back-button> -->
+     
+   <ion-nav-buttons side="left">
+      <span ng-click="goBack()">
+      <img src="img/27727.png" class="back-btn-img">
+        <!-- <i class="icon ion-chevron-left primary-buttons" ></i> -->
+        </span>
+    </ion-nav-buttons> 
+</ion-nav-bar>
+  <ion-pane class='my-body-area'>
+       <iframe ng-src="{{fileurl}}" style="width:100%; height: 95%;margin-top: 45px;"></iframe>
+  </ion-pane>
+</ion-view>

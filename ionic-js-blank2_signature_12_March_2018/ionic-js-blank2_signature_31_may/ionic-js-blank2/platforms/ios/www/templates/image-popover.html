@@ -1,0 +1,31 @@
+<ion-view cache-view="false">
+    <ion-nav-bar class="bar-stable my-nav-bar-area nav-title-slide-ios7">
+        <!-- <ion-nav-back-button>
+        </ion-nav-back-button> -->
+
+        <ion-nav-buttons side="left">
+            <span ng-click="closeModal()">
+                <img src="img/27727.png" class="back-btn-img">
+                <!-- <i class="icon ion-chevron-left primary-buttons" ></i> -->
+            </span>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-pane>
+        <ion-header-bar class="bar-stable">
+            <h1 class="title">Ionic Overlay</h1>
+        </ion-header-bar>
+        <ion-content>
+            <div image-dimensions>
+                <img src="{{imageUrl}}" alt="image" title="image"/>
+            </div>
+              
+        </ion-content>
+        <ion-footer-bar class="bar bar-positive" ng-hide="true">
+            <div class="button-bar">
+                <button class="button icon-left" ng-click="drawOnImage()">Edit</button>
+
+            </div>
+        </ion-footer-bar>
+    </ion-pane>
+
+</ion-view>

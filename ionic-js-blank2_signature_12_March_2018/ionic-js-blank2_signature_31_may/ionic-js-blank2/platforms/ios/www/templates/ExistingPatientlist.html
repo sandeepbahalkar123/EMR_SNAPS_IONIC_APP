@@ -1,0 +1,36 @@
+
+<ion-view view-title="Existing Patient list">
+    <ion-nav-buttons side="Left">
+        <span ng-click="doSomething()">
+            <i class="icon ion-navicon primary-button"></i>
+        </span>
+    </ion-nav-buttons>
+    <ion-header-bar class="bar-light bar-subheader">
+        <label class="item item-input search">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="search" placeholder="Search" ng-model="search" ng-keyup="ExistingPatient(search)">
+        </label>
+        <div style="width: 20%; float:right;" ng-click="addNewPatientFromExistingPatient();">
+            <span style="color:#5290fc" class="item-note" >&nbsp;<b>Add New Patient</b></span>
+        </div>
+
+    </ion-header-bar>
+    <ion-content>
+        <!--<ion-list>
+         <ion-item  ng-repeat ="x in ExistingPatientlist | orderBy:'patient_name'" href="#/app/ExistingPatientHistory/{{x.id}}">
+         <i class="ion ion-icon ion-ios-person"></i>
+         {{x.patient_name}}
+         </ion-list>-->
+        <table class="table">
+            <th><i class="ion ion-icon ion-ios-person"></i>&nbsp;<b>Name</b></th>
+            <th><b>Reg ID</b></th>
+            <th><i class="ion-ios-telephone"></i>&nbsp;<b>Phone</b></th>
+            <tr ng-repeat="x in ExistingPatientlist | orderBy:'patient_name'" ng-click="ExistingPatientClicked(x)">
+                <td>{{x.patient_name}}</td>
+                <td>{{x.reference_id}}</td>
+                <td>{{x.patient_phon}}</td>
+            </tr>
+        </table>
+    </ion-content>
+</ion-view>
+

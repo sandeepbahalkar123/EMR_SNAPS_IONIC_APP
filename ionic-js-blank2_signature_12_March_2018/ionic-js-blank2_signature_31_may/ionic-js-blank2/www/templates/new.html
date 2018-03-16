@@ -1,0 +1,90 @@
+    <ion-view view-title="Patient Basic Info" cache-view="false"> 
+
+    <ion-nav-buttons side="left">
+      <span  ng-click="doSomething()">
+        <i class="icon ion-chevron-left primary-buttons"></i>
+        </span>
+    </ion-nav-buttons> 
+ 
+      <ion-content class="padding" ng-controller="PatientController">
+       
+      <form name="AddPatientForm">
+        <div class="form-group" ng-class="{ 'has-error' : AddPatientForm.name.$invalid && !AddPatientForm.name.$pristine }">
+            <label>Name</label>
+            <input id="txtName" type="text" only-letters-input name="name"  class="form-control" 
+            ng-model="patient.patient_name" style="border: 1px solid" required>
+              <!--  <div class="help-block" ng-messages="AddPatientForm.name.$error" ng-if="AddPatientForm.name.$touched">
+               <p ng-show="AddPatientForm.name.$invalid && !AddPatientForm.name.$pristine" class="help-block">You name is required.</p>
+               </div> -->
+                 <span  class="help-block" ng-show="AddPatientForm.name.$dirty && AddPatientForm.name.$error.required">Name is Required!</span>
+                <!-- <span class="help-block" ng-show="AddPatientForm.name.$dirty && AddPatientForm.name.$error.pattern">Name must be Character</span> -->
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': AddPatientForm.gender.$touched && AddPatientForm.gender.$invalid }">
+            <label class = "item item-input item-select item-light">
+            <div class = "input-label">
+              Gender
+            </div>
+            <select ng-model="patient.patient_gender" name="gender" >
+             <option value="Male">Male</option>
+             <option value="Female">Female</option>
+            </select>
+             
+             </label>
+              <span  class="help-block" ng-show="AddPatientForm.gender.$dirty && AddPatientForm.gender.$error.required">Gender is Required!</span>
+        </div>  
+         <div class="form-group" ng-class="{ 'has-error': AddPatientForm.number.$touched && AddPatientForm.number.$invalid }">
+              <label>Phone Number</label>
+              <input type="number" name="number" limit-to="10"  ng-minlength=10  ng-model="patient.patient_phon" class="form-control" style="border: 1px solid"  >
+            <!--   <div class="help-block" ng-messages="AddPatientForm.number.$error" ng-if="AddPatientForm.number.$touched">
+                  <p ng-show="AddPatientForm.number.$invalid && !AddPatientForm.number.$pristine">Phone Number is required</p>
+              </div> -->
+                 <span  class="help-block" ng-show="AddPatientForm.number.$dirty && AddPatientForm.number.$error.required">Phone Number is Required!</span>
+                <span class="help-block" ng-show="AddPatientForm.number.$dirty && AddPatientForm.number.$error.minlength">phone Number must be of 10 digit</span>
+                <!-- <span ng-show="AddPatientForm.number.$dirty && AddPatientForm.number.$error.maxlength">Not More than 11 digit</span> -->
+        </div>   
+         <div class="form-group">
+              <label>Alternate Number</label>
+              <input type="number" name="alternatenumber" style="border: 1px solid" ng-model="patient.patient_alt_phon" class="form-control" limit-to="10"  ng-minlength=10>
+             <!--  <div class="help-block" ng-messages="AddPatientForm.alternatenumber.$error" 
+              ng-if="AddPatientForm.alternatenumber.$touched">
+                  <p ng-show="AddPatientForm.alternatenumber.$invalid && !AddPatientForm.alternatenumber.$pristine"> Alternate Phone Number is required</p>
+              </div> -->
+        </div>   
+        
+         <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="email" class="form-control" ng-model="patient.patient_email" style="border: 1px solid" >
+              <!-- <div class="help-block" ng-messages="AddPatientForm.email.$error.required" ng-if="AddPatientForm.email.$touched && AddPatientForm.email.$error.required">
+                  <p ng-show="AddPatientForm.email.$invalid && !AddPatientForm.email.$pristine">Email is required</p>
+              </div> -->
+
+              <div class="help-block" ng-messages="AddPatientForm.email.$error.email" >
+                  <p ng-show="AddPatientForm.email.$invalid && !AddPatientForm.email.$pristine">Not valid email!</p>
+              </div>
+        </div> 
+
+          <div class="form-group">
+              <label>Reg ID</label>
+              <input type="text" name="reference_id" style="border: 1px solid" ng-model="patient.reference_id" class="form-control" limit-to="10" ng-minlength=10>
+              <!--  <div class="help-block" ng-messages="AddPatientForm.alternatenumber.$error"
+         ng-if="AddPatientForm.alternatenumber.$touched">
+             <p ng-show="AddPatientForm.alternatenumber.$invalid && !AddPatientForm.alternatenumber.$pristine"> Alternate Phone Number is required</p>
+         </div> -->
+          </div>   
+        
+       <style>
+         .btn-addpat[disabled] {
+            cursor: not-allowed;
+            filter: alpha(opacity=25);
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            opacity: .25;
+          }
+       </style>
+        <div class="form-group row">
+          <button  ng-click="addPatientDetail(patient)" ng-disabled="AddPatientForm.$invalid" class="btn btn-primary btn-addpat" style="margin-left: 10px;">Submit</button>
+          <button  ng-click="Cancel(patient)" type="submit" class="btn btn-danger" style="margin-left: 10px;">Cancel</button>
+        </div>
+    </form>
+      </ion-content>
+    </ion-view>

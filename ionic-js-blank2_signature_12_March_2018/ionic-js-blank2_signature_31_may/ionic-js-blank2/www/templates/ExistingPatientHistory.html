@@ -1,0 +1,51 @@
+<ion-view view-title="CHECK UP">
+<ion-nav-bar class="bar-stable my-nav-bar-area nav-title-slide-ios7">
+    <!-- <ion-nav-back-button>
+    </ion-nav-back-button> -->
+     
+   <ion-nav-buttons side="left">
+      <span ng-click="doSomething()">
+      <img src="img/27727.png" class="back-btn-img">
+        <!-- <i class="icon ion-chevron-left primary-buttons" ></i> -->
+        </span>
+    </ion-nav-buttons>
+<ion-nav-buttons side="right" >
+    <i class="icon ion-plus" style="font-size: 32px;cursor:pointer; right: 14px;" ng-click="checkup()" ng-hide="true"></i>
+</ion-nav-buttons> 
+</ion-nav-bar>
+
+  <ion-content class='my-body-area'>
+    <div class="details">
+      &nbsp;&nbsp;&nbsp; <i class="ion-ios-person">&nbsp;{{ patient_name }}</i>
+      <br/>
+      &nbsp;&nbsp;&nbsp; <i class="ion-ios-telephone">&nbsp;{{ patient_phon }}</i>
+        <br />
+        &nbsp;&nbsp;&nbsp;Reg ID:&nbsp;{{ reference_id }}
+    <!--  &nbsp;<i class="icon ion-android-attach" ng-click="checkup()"></i> -->
+
+    </div>
+
+     <div class="item item-divider">
+         
+         <div style="width: 50%; float:left;">Patient History</div>
+         <div style="width: 20%; float:right;" ng-click="checkup();">
+         <span style="color:#5290fc" class="item-note" ><b>+&nbsp;Add OPD</b></span>
+         </div>
+         
+     </div>
+
+
+      <ion-list>
+      <ion-item ng-repeat="opd in opds | orderBy:'OPDDate':true"  ng-click="onexistingPatientHistoryItemClicked(opd)">
+              <span style="font-size: 12px;">
+                  <i class="ion-plus-round"></i>
+
+                  CheckUp On {{opd.OPDDate}}
+              </span>
+              <!-- CheckUp On {{opd.OPDDate | dateFormat1}}</span> -->
+              <!--  OPdNo {{opd.OpdNo}}
+         Opdid {{opd.Opdid}} -->
+          </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

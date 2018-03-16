@@ -1,0 +1,35 @@
+<ion-view cache-view="false">
+    <ion-content>
+        <h3>Upload file</h3>
+        <!-- <img ng-src="{{ imageUrl }}" style="width: 100%; height: 100%;"><br/> -->
+        <!--<p ng-repeat="img in imageurls" style="text-align:center; width: 100%;">
+            <img ng-src="{{img}}" style="max-width:250px;max-height:250px; text-align: center;" />
+        </p>-->
+        <div class="row" ng-repeat="image in imageurls" ng-if="$index % 2 === 0" style="margin-left: 1px; text-align: center; width: 100%;">
+            <div id="div{{$index}}" class="imgDiv1" ng-if="$index < imageurls.length" >
+                <img ng-src="{{imageurls[$index].src}}" style="width:100%; height: 150px; vertical-align: middle; text-align: center;" ng-click="showImages($index)"  />
+                <div ng-click="chkClick(this, $index)">
+                    {{imageurls[$index].imageName}}
+                    <!--<label class="checkbox" style="border: 1px solid blue;">
+                        <input type="checkbox" ng-model="{{imageurls[$index].imageName}}" style="margin-left: 2px; border: 1px solid green;" ng-change="chkClick()" >
+                    </label>-->
+                </div>
+            </div>
+            <div id="div{{$index + 1}}" class="imgDiv2" ng-if="$index + 1 < imageurls.length" >
+                <img ng-src="{{imageurls[$index + 1].src}}" style="width:100%; height: 150px; vertical-align: middle; text-align: center;" ng-click="showImages($index + 1)" />
+                <div ng-click="chkClick(this, ($index + 1))">
+                    {{imageurls[$index + 1].imageName}}
+                    <!--<label class="checkbox">
+            <input type="checkbox" ng-model="{{imageurls[$index].imageName}}" style="margin-left: 2px;" ng-click="chkClick($index + 1)">
+        </label>-->
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar class="bar bar-positive">
+        <div class="button-bar">
+            <button class="button icon-left ion-upload" ng-click="uploadFiles()">Upload</button>
+            <button class="button icon-left" ng-click="cancelImage()">Cancel</button>
+        </div>
+    </ion-footer-bar>
+</ion-view>

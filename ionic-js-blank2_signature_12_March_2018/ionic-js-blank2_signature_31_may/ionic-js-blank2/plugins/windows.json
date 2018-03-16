@@ -1,0 +1,55 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-actionsheet": {
+            "PACKAGE_NAME": "EMR"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "EMR"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "EMR"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "EMR"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "EMR"
+        },
+        "cordova-plugin-file-opener2": {
+            "PACKAGE_NAME": "EMR"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "EMR"
+        },
+        "cordova-plugin-filepath": {
+            "PACKAGE_NAME": "EMR"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "EMR"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "EMR"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "EMR"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "EMR"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "EMR"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "EMR"
+        }
+    }
+}
